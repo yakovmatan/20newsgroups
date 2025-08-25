@@ -1,6 +1,7 @@
-from src.MongoDB.mongodb_connection import DbConnection
-from src.kafka_configurations import Configurations
 from datetime import datetime, timezone
+from consumer_interesting.src.kafka_configurations import Configurations
+from consumer_interesting.src.mongodb_connection import DbConnection
+
 
 class ConsumerMassageInteresting:
 

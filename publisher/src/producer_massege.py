@@ -1,5 +1,5 @@
-from src.data import Data
-from src.publisher.producer import Producer
+from publisher.src.data import Data
+from publisher.src.producer import Producer
 
 
 class ProducerMassage:
