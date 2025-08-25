@@ -5,20 +5,19 @@ from datetime import datetime, timezone
 class ConsumerMassageInteresting:
 
     def __init__(self, topic='interesting'):
-        self.event = Configurations().get_consumer_events(topic)
+        self.events = Configurations().get_consumer_events(topic)
         self.connection = DbConnection()
         self.collection = self.connection.db[topic]
 
     def consumer_with_auto_commit(self):
-        self.insert_to_mongodb(self.event)
+        self.insert_to_mongodb(self.events)
 
 
     def insert_to_mongodb(self,events):
         for message in events:
             try:
-                data = message.value  # כבר dict בגלל value_deserializer
+                data = message.value
 
-                # הוספת חותמת זמן
                 data["created_at"] = datetime.now(timezone.utc)
 
                 self.collection.insert_one(data)
