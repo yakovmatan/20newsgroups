@@ -1,8 +1,8 @@
-from kafka_configurations import Configurations
+from src.kafka_configurations import Configurations
 
-class Consumer:
+class ConsumerMassageInteresting:
 
-    def __init__(self, topic):
+    def __init__(self, topic='interesting'):
         self.event = Configurations().get_consumer_events(topic)
 
     def consumer_with_auto_commit(self):
@@ -14,8 +14,3 @@ class Consumer:
             print("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                                  message.offset, message.key,
                                                  message.value))
-
-
-if __name__ == '__main__':
-     e = Consumer("topic1")
-     e.consumer_with_auto_commit()
