@@ -1,4 +1,4 @@
-from kafka_configurations import Configurations
+from src.kafka_configurations import Configurations
 
 class Producer:
 
