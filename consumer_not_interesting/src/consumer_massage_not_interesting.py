@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
-from consumer_not_interesting.src.kafka_configurations import Configurations
-from consumer_not_interesting.src.mongodb_connection import DbConnection
+from kafka_configurations import Configurations
+from mongodb_connection import DbConnection
 
 
 class ConsumerMassageNotInteresting:

@@ -1,5 +1,5 @@
 import os
-from kafka import KafkaProducer,KafkaConsumer
+from kafka import KafkaConsumer
 import json
 
 class Configurations:

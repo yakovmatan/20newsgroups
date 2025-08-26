@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from consumer_interesting.src.consumer_massage_interesting import ConsumerMassageInteresting
+from consumer_massage_interesting import ConsumerMassageInteresting
 import uvicorn as uv
 
 app = FastAPI()

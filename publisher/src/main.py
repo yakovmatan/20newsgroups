@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from publisher.src.producer_messege import ProducerMessage
+from producer_messege import ProducerMessage
 import uvicorn as uv
 
 app = FastAPI()
