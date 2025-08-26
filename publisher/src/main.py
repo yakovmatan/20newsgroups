@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from publisher.src.producer_messege import ProducerMessage
+import uvicorn as uv
 
 app = FastAPI()
 
@@ -18,3 +19,6 @@ def get_all_soldiers():
             "status": "failed",
             "error": str(e)
         }
+
+if __name__ == '__main__':
+    uv.run('main:app', host='127.0.0.1', port=8002, reload=True)

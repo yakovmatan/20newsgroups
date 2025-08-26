@@ -11,20 +11,20 @@ class ConsumerMassageInteresting:
         self.collection = self.connection.db[topic]
 
     def consumer_with_auto_commit(self):
-        self.insert_to_mongodb(self.events)
+        return self.insert_to_mongodb(self.events)
 
-
-    def insert_to_mongodb(self,events):
-        for message in events:
-            try:
-                data = message.value
+    def insert_to_mongodb(self, events):
+        inserted = []
+        for messages in events:
+            for m in messages.value:
+                data = {}
+                data['massege'] = m
 
                 data["created_at"] = datetime.now(timezone.utc)
 
                 self.collection.insert_one(data)
-                return f"Message inserted: {data}"
-            except Exception as e:
-                return f"❌ Failed to insert message: {e}"
+                inserted.append(data)
+        return {"inserted": inserted}
 
     def find_all(self):
         try:
