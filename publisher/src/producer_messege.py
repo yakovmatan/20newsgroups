@@ -1,4 +1,4 @@
-from publisher.src.data import Data
+from data import Data
 from producer import Producer
 
 

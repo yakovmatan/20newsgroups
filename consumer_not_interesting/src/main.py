@@ -28,6 +28,3 @@ def get_all_soldiers():
     if isinstance(result, dict) and "error" in result:
         raise HTTPException(status_code=500, detail="Database error")
     return result
-
-if __name__ == '__main__':
-    uv.run('main:app', host='127.0.0.1', port=8001, reload=True)

@@ -5,7 +5,7 @@ import json
 class Configurations:
 
     def __init__(self):
-        self.bootstrap_servers = os.getenv("BOOTSTRAP_SERVERS", 'localhost:9092')
+        self.bootstrap_servers = os.getenv("KAFKA_BROKER", 'localhost:9092')
 
 
     def get_producer_config(self):
