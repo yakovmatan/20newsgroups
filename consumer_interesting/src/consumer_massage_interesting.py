@@ -25,3 +25,9 @@ class ConsumerMassageInteresting:
                 return f"Message inserted: {data}"
             except Exception as e:
                 return f"❌ Failed to insert message: {e}"
+
+    def find_all(self):
+        try:
+            return list(self.collection.find({}, {"_id": 0}))
+        except Exception as e:
+            return {"error": e}
