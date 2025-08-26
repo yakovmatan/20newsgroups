@@ -1,5 +1,5 @@
-from publisher.src.data import Data
-from publisher.src.producer import Producer
+from data import Data
+from producer import Producer
 
 
 class ProducerMessage:

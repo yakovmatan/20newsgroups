@@ -6,12 +6,12 @@ class DbConnection:
     def __init__(self):
 
         try:
-            mongo_user = os.getenv("MONGODB_USER","admin")
-            mongo_password = os.getenv("MONGODB_PASSWORD","yakov")
-            mongo_db = os.getenv("MONGODB_DATABASE","20newsgroups")
-            mongo_host = os.getenv("MONGODB_HOST","localhost")
-            mongo_port = os.getenv("MONGODB_PORT","27017")
-            auth_db = os.getenv("MONGODB_AUTH_DB","admin")
+            mongo_user = os.getenv("MONGODB_USER")
+            mongo_password = os.getenv("MONGODB_PASSWORD")
+            mongo_db = os.getenv("MONGODB_DATABASE")
+            mongo_host = os.getenv("MONGODB_HOST")
+            mongo_port = os.getenv("MONGODB_PORT")
+            auth_db = os.getenv("MONGODB_AUTH_DB")
 
             self.client = pymongo.MongoClient(
                 host=mongo_host,

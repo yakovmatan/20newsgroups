@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 import uvicorn as uv
-from consumer_not_interesting.src.consumer_massage_not_interesting import ConsumerMassageNotInteresting
+from consumer_massage_not_interesting import ConsumerMassageNotInteresting
 
 app = FastAPI()
 
@@ -28,6 +28,3 @@ def get_all_soldiers():
     if isinstance(result, dict) and "error" in result:
         raise HTTPException(status_code=500, detail="Database error")
     return result
-
-if __name__ == '__main__':
-    uv.run('main:app', host='127.0.0.1', port=8001, reload=True)
